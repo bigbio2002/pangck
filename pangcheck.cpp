@@ -13,6 +13,7 @@ int pangramCheck(string &sentence)
 
 	unsigned int letterFreq[26];
 	unsigned int totalLetters = 0;
+	bool notPerfect = false;
 	// initialize array-
 	memset(&letterFreq, 0, 26);
 
@@ -48,5 +49,33 @@ int pangramCheck(string &sentence)
 		}
 		// sum the number of letters for "perfect" determination
 		totalLetters += letterFreq[i];
+
+		// must be exaxtly 1 of every letter to be perfect
+		if(letterFreq[i] != 1)
+		{
+			notPerfect = true;
+		}
 	}
+
+	if(!notPerfect)
+	{
+		cout << "Your pangram is PERFRCT!!" << endl;
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		cout << "Your pangram contains " << totalLetters << " letters:\n\n";
+		for(char abc=65;abc<91;abc++)
+		{
+			printf("  %c", abc);
+		}
+		printf("\n");
+		for(int i=0;i<26;i++)
+		{
+			printf(" %2i", letterFreq[i]);
+		}
+		printf("\n");
+	}
+
+	exit(EXIT_SUCCESS);
 }
