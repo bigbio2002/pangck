@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include <cctype>
 
 using namespace std;
@@ -67,14 +68,18 @@ int pangramCheck(string &sentence)
 		cout << "Your pangram contains " << totalLetters << " letters:\n\n";
 		for(char abc=65;abc<91;abc++)
 		{
-			printf("  %c", abc);
+			cout << "  " << abc;
+			//printf("  %c", abc);
 		}
-		printf("\n");
+		cout << "\n";
+		//printf("\n");
 		for(int i=0;i<26;i++)
 		{
-			printf(" %2i", letterFreq[i]);
+			cout << setw(3) << letterFreq[i];
+			//printf(" %2i", letterFreq[i]);
 		}
-		printf("\n");
+		cout << "\n";
+		//printf("\n");
 	}
 
 	exit(EXIT_SUCCESS);
