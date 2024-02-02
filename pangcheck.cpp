@@ -16,7 +16,7 @@ int pangramCheck(string &sentence)
 	unsigned int totalLetters = 0;
 	bool notPerfect = false;
 	// initialize array-
-	memset(&letterFreq, 0, 26);
+	memset(&letterFreq, 0, sizeof(letterFreq));
 
 	for(string::size_type i = 0; i < sentence.length(); ++i)
 	{
@@ -75,7 +75,7 @@ int pangramCheck(string &sentence)
 		//printf("\n");
 		for(int i=0;i<26;i++)
 		{
-			cout << setw(3) << letterFreq[i];
+			cout << setw(3) << letterFreq[i] << "\n";
 			//printf(" %2i", letterFreq[i]);
 		}
 		cout << "\n";
