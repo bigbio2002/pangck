@@ -10,7 +10,7 @@ int main(void)
 	string sentenceToCheck;
 
 	cout << "Enter the sentence you would like to check if it's a pangram:" << endl;
-	cin >> sentenceToCheck;
+	getline(cin, sentenceToCheck);
 	pangramCheck(sentenceToCheck);
 
 	return 0;

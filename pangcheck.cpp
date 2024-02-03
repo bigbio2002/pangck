@@ -15,8 +15,9 @@ int pangramCheck(string &sentence)
 	unsigned int letterFreq[26];
 	unsigned int totalLetters = 0;
 	bool notPerfect = false;
+	bool notPangram = false;
 	// initialize array-
-	memset(&letterFreq, 0, sizeof(letterFreq));
+	memset(letterFreq, 0, sizeof(letterFreq));
 
 	for(string::size_type i = 0; i < sentence.length(); ++i)
 	{
@@ -30,7 +31,7 @@ int pangramCheck(string &sentence)
 			exit(EXIT_FAILURE);
 		}
 
-		//count frequency of each letter
+		// total the frequency of each letter
 		if(islower(sentence[i]))
 		{
 			++letterFreq[(sentence[i]-97)];
@@ -43,16 +44,15 @@ int pangramCheck(string &sentence)
 
 	for(int i=0;i<26;i++)
 	{
-		if(letterFreq[i] == 0)
+		if(letterFreq[i] == 0 && !notPangram)
 		{
-			cout << "Your sentence is not a pangram." << endl;
-			exit(EXIT_SUCCESS);
+			notPangram = true;
 		}
 		// sum the number of letters for "perfect" determination
 		totalLetters += letterFreq[i];
 
 		// must be exaxtly 1 of every letter to be perfect
-		if(letterFreq[i] != 1)
+		if(letterFreq[i] != 1 && !notPerfect)
 		{
 			notPerfect = true;
 		}
@@ -60,27 +60,29 @@ int pangramCheck(string &sentence)
 
 	if(!notPerfect)
 	{
-		cout << "Your pangram is PERFRCT!!" << endl;
+		cout << "\nYour pangram is PERFRCT!!" << endl;
 		exit(EXIT_SUCCESS);
+	}
+	else if(notPangram)
+	{
+		cout << "\nYour sentence is not a pangram.\n\n";
 	}
 	else
 	{
-		cout << "Your pangram contains " << totalLetters << " letters:\n\n";
-		for(char abc=65;abc<91;abc++)
-		{
-			cout << "  " << abc;
-			//printf("  %c", abc);
-		}
-		cout << "\n";
-		//printf("\n");
-		for(int i=0;i<26;i++)
-		{
-			cout << setw(3) << letterFreq[i] << "\n";
-			//printf(" %2i", letterFreq[i]);
-		}
-		cout << "\n";
-		//printf("\n");
+		cout << "\nYour sentence is a pangram!\n\n";
 	}
+
+	cout << "Your pangram contains " << totalLetters << " letters:\n\n";
+	for(char abc=65;abc<91;abc++)
+	{
+		cout << "  " << abc;
+	}
+	cout << "\n";
+	for(int i=0;i<26;i++)
+	{
+		cout << setw(3) << letterFreq[i];
+	}
+	cout << "\n";
 
 	exit(EXIT_SUCCESS);
 }
