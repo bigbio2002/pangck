@@ -1,9 +1,11 @@
-CFLAGS ?= -O1 -g
+CXX ?= g++
+CXXFLAGS ?= -O2 -g
+
 
 default: pangck
 
 pangck:
-	g++ $(CFLAGS) -o pangck main.cpp pangcheck.cpp
+	$(CXX) $(CXXFLAGS) -o pangck main.cpp pangcheck.cpp
 
 clean:
 	rm -f pangck
