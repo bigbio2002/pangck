@@ -9,3 +9,5 @@ pangck:
 
 clean:
 	rm -f pangck
+
+.PHONY: default clean
