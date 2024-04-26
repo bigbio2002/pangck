@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <cstdlib>
-#include <cctype>
+#include <iomanip>	//for setw()
+#include <cstdlib>	//for exit()
+#include <cctype>	//for islower/isupper
 
 using namespace std;
 

@@ -1,11 +1,10 @@
 #include <iostream>
 #include <string>
+#include "pangcheck.h"
 
 using namespace std;
 
-int pangramCheck(string &);
-
-int main(void)
+int main()
 {
 	string sentenceToCheck;
 
