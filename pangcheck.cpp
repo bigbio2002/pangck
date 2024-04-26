@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>	//for setw()
 #include <cstdlib>	//for exit()
+#include <cstring>	//for memset()
 #include <cctype>	//for islower/isupper
 
 using namespace std;
