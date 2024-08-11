@@ -1,2 +1,9 @@
-pangck
+Makefile
+config.status
+config.log
+
 *.o
+.deps/
+
+pangck
+pangck_clang
