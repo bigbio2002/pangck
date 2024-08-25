@@ -67,11 +67,11 @@ int pangramCheck(string &sentence)
 	}
 	else if(notPangram)
 	{
-		cout << "\nYour sentence is not a pangram.\n\n";
+		cout << "\nYour sentence is NOT a pangram.\n\n";
 	}
 	else
 	{
-		cout << "\nYour sentence is a pangram!\n\n";
+		cout << "\nYour sentence IS A PANGRAM!!\n\n";
 	}
 
 	cout << "Your pangram contains " << totalLetters << " letters:\n\n";
