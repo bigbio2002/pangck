@@ -1,6 +1,8 @@
+autom4te.cache/
 Makefile
 config.status
 config.log
+configure~
 
 *.o
 .deps/
